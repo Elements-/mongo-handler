@@ -18,7 +18,7 @@ mongo.findDocuments('collectionName', {}, function(docs) {
 
 // update
 mongo.updateDocument('collectionName', { "name" : "John Doe" }, { "admin" : "true" }, function(result) {
-  console.log('Added the admin field to John Doe's document');
+  console.log('Added the admin field to John Does document');
 });
 
 // delete
