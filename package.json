@@ -1,0 +1,22 @@
+{
+  "name": "mongo-handler",
+  "version": "0.0.1",
+  "description": "MongoDB Wrapper written by Cameron Kelliher",
+  "main": "mongo-handler.js",
+  "scripts": {
+    "test": "DEBUG=*,-nodemon:* nodemon test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/Elements-/mongo-handler.git"
+  },
+  "author": "Cameron Kelliher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/Elements-/mongo-handler/issues"
+  },
+  "homepage": "https://gitlab.com/Elements-/mongo-handler#README",
+  "dependencies": {
+    "mongodb": "^2.0.46"
+  }
+}
