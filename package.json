@@ -1,7 +1,7 @@
 {
   "name": "mongo-handler",
-  "version": "0.0.3",
-  "description": "MongoDB Wrapper written by Cameron Kelliher",
+  "version": "0.3.0",
+  "description": "Simple MongoDB Wrapper with Insert, Find, Delete, Update, and Sorting functionality",
   "main": "mongo-handler.js",
   "scripts": {
     "test": "DEBUG=*,-nodemon:* nodemon test.js"

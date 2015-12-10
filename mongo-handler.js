@@ -71,6 +71,24 @@ module.findDocuments = function(collectionName, search, callback) {
 }
 
 /**
+	Find and sort documents
+  -1 = descending
+  1 = ascending
+**/
+module.findAndSort = function(collectionName, search, sortBy, callback) {
+  if(db) {
+    db.collection(collectionName).find(search).addQueryModifier('$orderby', sortBy).toArray(function(err, docs) {
+      if (err) {
+        console.log('MongoDB Find Query Error: ' + err);
+    	  if(callback) callback(null);
+    	} else {
+    	  if(callback) callback(docs);
+    	}
+    });
+  }
+}
+
+/**
 	Update a document
 **/
 module.updateDocument = function(collectionName, where, data, callback) {
