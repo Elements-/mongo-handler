@@ -1,6 +1,6 @@
 var mongo = require('./mongo-handler')('mongodb://localhost:27017/mongo-handler-test');
 
-setTimeout(function() {
+//setTimeout(function() {
   /**mongo.insertDocument('test', { "name" : "cam" }, function(docs) {
     console.log(docs.result);
     mongo.updateDocument('test', { "name" : "cam" }, { "name" : "john" }, function(docs) {
@@ -18,8 +18,8 @@ setTimeout(function() {
     console.log(docs);
   });**/
 
-  mongo.updateDocument('test', { name : 'Bob' }, { lastName : 'Jamestone' }, function(result) {
-    console.log('updated');
+  mongo.insertDocument('test', { lastName : 'Jamestone' }, function(result) {
+    console.log('inserted');
   });
 
-}, 100);
+//}, 100);

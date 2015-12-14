@@ -5,6 +5,8 @@ var ObjectID = require('mongodb').ObjectID;
 var mongoUrl;
 var db;
 
+var recheckTime = 10; //time between rechecks for db loading (ms)
+
 module.exports = function(url) {
   mongoUrl = url;
 
@@ -35,6 +37,10 @@ module.insertDocument = function(collectionName, data, callback) {
         if(callback) callback(docs);
       }
     });
+  } else {
+    setTimeout(function() {
+      module.insertDocument(collectionName, data, callback);
+    }, recheckTime);
   }
 }
 
@@ -51,6 +57,10 @@ module.deleteDocument = function(collectionName, where, callback) {
         if(callback) callback(docs);
       }
     });
+  } else {
+    setTimeout(function() {
+      module.deleteDocument(collectionName, where, callback);
+    }, recheckTime);
   }
 }
 
@@ -67,6 +77,10 @@ module.findDocuments = function(collectionName, search, callback) {
     	  if(callback) callback(docs);
     	}
     });
+  } else {
+    setTimeout(function() {
+      module.findDocuments(collectionName, search, callback);
+    }, recheckTime);
   }
 }
 
@@ -85,6 +99,10 @@ module.findAndSort = function(collectionName, search, sortBy, callback) {
     	  if(callback) callback(docs);
     	}
     });
+  } else {
+    setTimeout(function() {
+      module.findAndSort(collectionName, search, sortBy, callback);
+    }, recheckTime);
   }
 }
 
@@ -104,5 +122,9 @@ module.updateDocument = function(collectionName, where, data, callback) {
           if(callback) callback(docs);
         }
     });
+  } else {
+    setTimeout(function() {
+      module.updateDocument(collectionName, where, data, callback);
+    }, recheckTime);
   }
 }
