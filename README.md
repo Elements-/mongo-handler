@@ -1,3 +1,6 @@
+
+<strong>NOTE: this package is great for testing, and quick scripts, but it SHOULD NOT be used in production applications. You should always properly handle errors.</strong>
+
 <h3><strong>mongo-handler</strong>, a simple MongoDB wrapper module</h3>
 <hr>
 This module was written to negate the need for redundant error and null checks when writing MongoDB queries in Node. Each function has one callback argument that can either be an object or null (error).
